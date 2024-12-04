@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reconocimiento Facial en Vivo</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Reconocimiento Facial</h1>
+        </header>
+        
+        <main>
+            <section class="action-selection">
+                <h2>Selecciona una acción:</h2>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="action" id="uploadRadio" value="upload" checked>
+                        <span class="radio-custom"></span>
+                        Subir Persona
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="action" id="compareRadio" value="compare">
+                        <span class="radio-custom"></span>
+                        Comprobar Persona
+                    </label>
+                </div>
+            </section>
+
+            <section id="nameSection" class="name-input">
+                <label for="imageName">Nombre asociado a la imagen:</label>
+                <input type="text" id="imageName" placeholder="Ingresa un nombre">
+            </section>
+
+            <section class="camera-section">
+                <video id="video" autoplay muted playsinline></video>
+                <canvas id="canvas"></canvas>
+            </section>
+
+            <section class="status-section">
+                <p id="status">Estado: No se ha detectado una imagen válida</p>
+                <p id="successMessage" class="success"></p>
+                <p id="compareResults" class="compare-results"></p>
+            </section>
+
+            <section class="controls">
+                <button id="startButton" class="btn btn-primary">Iniciar Grabación</button>
+                <button id="stopButton" class="btn btn-secondary" disabled>Detener Grabación</button>
+            </section>
+        </main>
+    </div>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
