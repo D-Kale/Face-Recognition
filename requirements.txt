@@ -10,4 +10,4 @@ opencv-python==4.10.0.84
 pillow==11.0.0
 setuptools==75.6.0
 sqlparse==0.5.2
-tzdata==2024.2
+tzdata==2024.2 
